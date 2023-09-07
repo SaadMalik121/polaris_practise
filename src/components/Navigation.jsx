@@ -1,17 +1,15 @@
-import { Frame, HorizontalStack, Navigation } from "@shopify/polaris";
+import { Box, Frame, HorizontalStack, Navigation } from "@shopify/polaris";
 import { HomeMinor, OrdersMinor, ProductsMinor } from "@shopify/polaris-icons";
 import React from "react";
-import { useSelector } from "react-redux";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 function NavigationExample() {
-  const users = useSelector((state) => state.users.users);
   const location = useLocation(); // Get the current location
 
   return (
     <Frame>
       <HorizontalStack gap={"10"} wrap={true}>
-        <div>
+        <Box paddingBlockStart={"12"}>
           <Navigation location={location.pathname}>
             <Navigation.Section
               items={[
@@ -38,13 +36,12 @@ function NavigationExample() {
                   url: "/viewUsers",
                   label: "View Users",
                   icon: ProductsMinor,
-                  badge: String(users?.length),
                   active: location.pathname === "/viewUsers",
                 },
               ]}
             />
           </Navigation>
-        </div>
+        </Box>
 
         <div style={{ width: "75%" }}>
           <Outlet />

@@ -1,13 +1,8 @@
 import React from "react";
-import { Box } from "@shopify/polaris";
-import Navigation from "./components/Navigation";
+import NavigationExample from "./components/Navigation";
 
 function App() {
-  return (
-    <Box padding={10}>
-      <Navigation />
-    </Box>
-  );
+  return <NavigationExample />;
 }
 
 export default App;
